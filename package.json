@@ -1,0 +1,24 @@
+{
+  "name": "nodedns",
+  "version": "1.0.0",
+  "description": "An implementation of the DNS protocol.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamb96/nodedns.git"
+  },
+  "keywords": [
+    "dns",
+    "server",
+    "protocol"
+  ],
+  "author": "williamb96",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamb96/nodedns/issues"
+  },
+  "homepage": "https://github.com/williamb96/nodedns#readme"
+}
