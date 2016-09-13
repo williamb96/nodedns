@@ -1,5 +1,5 @@
 # nodedns
-This is an implementation of the DNS protocol.
+This is a server implementation of the DNS protocol.
 
 ## Useful information
 * [freesoft.org's documentation of the DNS protcol](http://www.freesoft.org/CIE/RFC/1035/38.htm)
@@ -45,7 +45,7 @@ DNSMessage contains the following fields:
 * questions: DNSMessageQuestion
 * answers: DNSMessageResource[]
 * authorities: DNSMessageResource[]
-* additionals:DNSMessageResource[]
+* additionals: DNSMessageResource[]
 
 ## Question structure
 Requests typically contain 1 question in the `questions` array of the DNSMessage.
@@ -62,7 +62,7 @@ Instances of the class contain an array of labels.
 To quickly convert a DNSDomainName to a readable domain one can use `domain.labels.join('.')`
 
 There are two ways of creating a DNSDomainName:
-```javacript
+```javascript
 // From an array of labels
 var domain = nodedns.DNSDomainName.fromLabels(['www', 'example', 'com']);
 
