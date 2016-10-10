@@ -6,6 +6,18 @@ const DNSMessageQuestion = function() {
 	this.qclass = 0;
 };
 
+DNSMessageQuestion.prototype.encode = function() {
+	var name = this.qname.encode();
+
+	var buffer = new Buffer(name.length + 4);
+
+	name.copy(buffer, 0);
+	buffer.writeInt16BE(this.qtype, name.length);
+	buffer.writeInt16BE(this.qclass, name.length + 2);
+
+	return buffer;
+};
+
 DNSMessageQuestion.parse = function(buffer, count) {
 	var questions = [];
 	
