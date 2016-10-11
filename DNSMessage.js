@@ -16,14 +16,16 @@ const DNSMessage = function(server, rinfo) {
 DNSMessage.prototype.encode = function() {
 	var buffers = [];
 	
-	this.header.qdcount = 0; //this.questions.length;
+	this.header.qdcount = this.questions.length;
 	this.header.ancount = this.answers.length;
 	this.header.nscount = this.authorities.length;
 	this.header.arcount = this.additionals.length;
 	
 	buffers.push(this.header.encode());
 	
-	// TODO: Encode questions (even though these shouldn't be present in responses)
+	for (var i=0; i<this.questions.length; i++) {
+                buffers.push(this.questions[i].encode());
+        }
 	
 	for (var i=0; i<this.answers.length; i++) {
 		buffers.push(this.answers[i].encode());
