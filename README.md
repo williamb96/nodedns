@@ -24,8 +24,8 @@ const server = new nodedns.DNSServer(function(req, res) {
 	// TTL: 1 hour
 	record.ttl = 3600;
 	
-	// Data: 127.0.0.1
-	record.data = new Buffer([127, 0, 0, 1]);
+	// Record data: 127.0.0.1
+	record.rdata = new Buffer([127, 0, 0, 1]);
 
 	// Add record to 'answers' section of the response message
 	res.answers.push(record);
